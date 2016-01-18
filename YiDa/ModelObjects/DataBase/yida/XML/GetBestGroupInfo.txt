@@ -1,0 +1,76 @@
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">http://tempuri.org/IColor/GetBestGroupInfo</a:Action>
+    <a:MessageID>urn:uuid:84bc83b9-0d2b-48e1-8617-afbec01d63b3</a:MessageID>
+    <a:ReplyTo>
+      <a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>
+    </a:ReplyTo>
+  </s:Header>
+  <s:Body>
+    <GetBestGroupInfo xmlns="http://tempuri.org/">
+      <Sel_Type>ªÓ–‘</Sel_Type>
+      <Simple_Color>RD</Simple_Color>
+      <Color_Deep>DD</Color_Deep>
+      <Customer>TMME</Customer>
+      <Finish_List>2+</Finish_List>
+    </GetBestGroupInfo>
+  </s:Body>
+</s:Envelope>
+
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <s:Header>
+    <a:Action s:mustUnderstand="1" u:Id="_2">http://tempuri.org/IColor/GetBestGroupInfoResponse</a:Action>
+    <a:RelatesTo u:Id="_3">urn:uuid:3f5662d6-eb00-4cbd-a11f-5ac8ca1ccbbc</a:RelatesTo>
+    <o:Security s:mustUnderstand="1" xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <u:Timestamp u:Id="uuid-67c48f3b-6b59-4a82-bb80-e76fa63fd1d7-11">
+        <u:Created>2012-11-16T06:17:07.779Z</u:Created>
+        <u:Expires>2012-11-16T06:22:07.779Z</u:Expires>
+      </u:Timestamp>
+      <c:DerivedKeyToken u:Id="uuid-67c48f3b-6b59-4a82-bb80-e76fa63fd1d7-7" xmlns:c="http://schemas.xmlsoap.org/ws/2005/02/sc">
+        <o:SecurityTokenReference>
+          <o:Reference URI="urn:uuid:241b40a1-7398-426c-ac28-740d13cf054d" ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/sct" />
+        </o:SecurityTokenReference>
+        <c:Offset>0</c:Offset>
+        <c:Length>24</c:Length>
+        <c:Nonce>KNX7GVnc3ZCo+ObcXwfacA==</c:Nonce>
+      </c:DerivedKeyToken>
+      <c:DerivedKeyToken u:Id="uuid-67c48f3b-6b59-4a82-bb80-e76fa63fd1d7-8" xmlns:c="http://schemas.xmlsoap.org/ws/2005/02/sc">
+        <o:SecurityTokenReference>
+          <o:Reference URI="urn:uuid:241b40a1-7398-426c-ac28-740d13cf054d" ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/sct" />
+        </o:SecurityTokenReference>
+        <c:Nonce>3YTW5councTK71yvcQxddg==</c:Nonce>
+      </c:DerivedKeyToken>
+      <e:ReferenceList xmlns:e="http://www.w3.org/2001/04/xmlenc#">
+        <e:DataReference URI="#_1" />
+        <e:DataReference URI="#_4" />
+      </e:ReferenceList>
+      <e:EncryptedData Id="_4" Type="http://www.w3.org/2001/04/xmlenc#Element" xmlns:e="http://www.w3.org/2001/04/xmlenc#">
+        <e:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+        <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+          <o:SecurityTokenReference>
+            <o:Reference ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/dk" URI="#uuid-67c48f3b-6b59-4a82-bb80-e76fa63fd1d7-8" />
+          </o:SecurityTokenReference>
+        </KeyInfo>
+        <e:CipherData>
+          <e:CipherValue>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</e:CipherValue>
+        </e:CipherData>
+      </e:EncryptedData>
+    </o:Security>
+  </s:Header>
+  <s:Body u:Id="_0">
+    <GetBestGroupInfoResponse xmlns="http://tempuri.org/">
+      <GetBestGroupInfoResult>{"BestGroup":[{"Group_ID":"98","Chemical_ID":"205","Chemical_Name":"EVE YELLOW HE4R H/C"}
+                                            {"Group_ID":"98","Chemical_ID":"195","Chemical_Name":"EVE RED HE7B H/C"}
+					    {"Group_ID":"98","Chemical_ID":"181","Chemical_Name":"EVE BLUE HERD"}
+                                            {"Group_ID":"98","Chemical_ID":"182","Chemical_Name":"EVE BLUEAAA HERD"}
+					    {"Group_ID":"99","Chemical_ID":"205","Chemical_Name":"EVE YELLOW HE4R H/C"}
+					    {"Group_ID":"99","Chemical_ID":"195","Chemical_Name":"EVE RED HE7B H/C"}
+					    {"Group_ID":"99","Chemical_ID":"187","Chemical_Name":"EVE N BLUE HER"}
+					    {"Group_ID":"136","Chemical_ID":"205","Chemical_Name":"EVE YELLOW HE4R H/C"}
+					    {"Group_ID":"136","Chemical_ID":"195","Chemical_Name":"EVE RED HE7B H/C"}
+					    {"Group_ID":"136","Chemical_ID":"193","Chemical_Name":"EVE RED HE3B"}
+					    
+					    ]}</GetBestGroupInfoResult>
+    </GetBestGroupInfoResponse>
+  </s:Body>
+</s:Envelope>

@@ -1,0 +1,62 @@
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">http://tempuri.org/IColor/GetColorCodeList</a:Action>
+    <a:MessageID>urn:uuid:3195e373-42c7-49e7-b271-084efdabbfa8</a:MessageID>
+    <a:ReplyTo>
+      <a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>
+    </a:ReplyTo>
+  </s:Header>
+  <s:Body>
+    <GetColorCodeList xmlns="http://tempuri.org/">
+      <LB_NO>LB2012-2809</LB_NO>
+      <KD_NO>KD2012-23684</KD_NO>
+    </GetColorCodeList>
+  </s:Body>
+</s:Envelope>
+
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <s:Header>
+    <a:Action s:mustUnderstand="1" u:Id="_2">http://tempuri.org/IColor/GetColorCodeListResponse</a:Action>
+    <a:RelatesTo u:Id="_3">urn:uuid:dbcc8d01-872d-476b-9b74-200cbcc73709</a:RelatesTo>
+    <o:Security s:mustUnderstand="1" xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <u:Timestamp u:Id="uuid-3f3861c2-3499-4ff3-b196-e97dcb8dd760-35">
+        <u:Created>2012-11-16T05:13:06.605Z</u:Created>
+        <u:Expires>2012-11-16T05:18:06.605Z</u:Expires>
+      </u:Timestamp>
+      <c:DerivedKeyToken u:Id="uuid-3f3861c2-3499-4ff3-b196-e97dcb8dd760-7" xmlns:c="http://schemas.xmlsoap.org/ws/2005/02/sc">
+        <o:SecurityTokenReference>
+          <o:Reference URI="urn:uuid:19223a12-29b0-42d9-8358-ac71ae9f7cb9" ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/sct" />
+        </o:SecurityTokenReference>
+        <c:Offset>0</c:Offset>
+        <c:Length>24</c:Length>
+        <c:Nonce>WEpt9kfWEjsdQ6MRwwRVQg==</c:Nonce>
+      </c:DerivedKeyToken>
+      <c:DerivedKeyToken u:Id="uuid-3f3861c2-3499-4ff3-b196-e97dcb8dd760-8" xmlns:c="http://schemas.xmlsoap.org/ws/2005/02/sc">
+        <o:SecurityTokenReference>
+          <o:Reference URI="urn:uuid:19223a12-29b0-42d9-8358-ac71ae9f7cb9" ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/sct" />
+        </o:SecurityTokenReference>
+        <c:Nonce>RkxOWJhYUT7inBvbSwvHRg==</c:Nonce>
+      </c:DerivedKeyToken>
+      <e:ReferenceList xmlns:e="http://www.w3.org/2001/04/xmlenc#">
+        <e:DataReference URI="#_1" />
+        <e:DataReference URI="#_4" />
+      </e:ReferenceList>
+      <e:EncryptedData Id="_4" Type="http://www.w3.org/2001/04/xmlenc#Element" xmlns:e="http://www.w3.org/2001/04/xmlenc#">
+        <e:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+        <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+          <o:SecurityTokenReference>
+            <o:Reference ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/dk" URI="#uuid-3f3861c2-3499-4ff3-b196-e97dcb8dd760-8" />
+          </o:SecurityTokenReference>
+        </KeyInfo>
+        <e:CipherData>
+          <e:CipherValue>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</e:CipherValue>
+        </e:CipherData>
+      </e:EncryptedData>
+    </o:Security>
+  </s:Header>
+  <s:Body u:Id="_0">
+    <GetColorCodeListResponse xmlns="http://tempuri.org/">
+      <GetColorCodeListResult>{"ColorCode":[{"Item_NO":"50NYE0057"}{"Item_NO":"50RDE0081"}{"Item_NO":"50RW001"}]}</GetColorCodeListResult>
+    </GetColorCodeListResponse>
+  </s:Body>
+</s:Envelope>

@@ -1,0 +1,66 @@
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">http://tempuri.org/IColor/GetBulkAuxiliariesInfo</a:Action>
+    <a:MessageID>urn:uuid:fc22b223-d00f-4a29-a0d4-bd44d6097c91</a:MessageID>
+    <a:ReplyTo>
+      <a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>
+    </a:ReplyTo>
+  </s:Header>
+  <s:Body>
+    <GetBulkAuxiliariesInfo xmlns="http://tempuri.org/">
+      <xriteNO>加成</xriteNO>
+      <Batch_NO>C2037176</Batch_NO>
+      <FirstDyeCotton>0</FirstDyeCotton>
+      <ChemicalIDStr>190,294,708,</ChemicalIDStr>
+      <UsageStr>0.186,2,0.5</UsageStr>
+    </GetBulkAuxiliariesInfo>
+  </s:Body>
+</s:Envelope>
+
+
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <s:Header>
+    <a:Action s:mustUnderstand="1" u:Id="_2">http://tempuri.org/IColor/GetBulkAuxiliariesInfoResponse</a:Action>
+    <a:RelatesTo u:Id="_3">urn:uuid:ef58ebd4-972e-4be2-8061-4e55a8de27df</a:RelatesTo>
+    <o:Security s:mustUnderstand="1" xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <u:Timestamp u:Id="uuid-dd2117e3-4969-4b7d-9945-b45c7de21306-17">
+        <u:Created>2012-11-16T05:44:48.744Z</u:Created>
+        <u:Expires>2012-11-16T05:49:48.744Z</u:Expires>
+      </u:Timestamp>
+      <c:DerivedKeyToken u:Id="uuid-dd2117e3-4969-4b7d-9945-b45c7de21306-7" xmlns:c="http://schemas.xmlsoap.org/ws/2005/02/sc">
+        <o:SecurityTokenReference>
+          <o:Reference URI="urn:uuid:940ecb87-bbfe-4453-adff-6df432ae9d5b" ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/sct" />
+        </o:SecurityTokenReference>
+        <c:Offset>0</c:Offset>
+        <c:Length>24</c:Length>
+        <c:Nonce>eKMSJGHggGqQnzJeshdSYA==</c:Nonce>
+      </c:DerivedKeyToken>
+      <c:DerivedKeyToken u:Id="uuid-dd2117e3-4969-4b7d-9945-b45c7de21306-8" xmlns:c="http://schemas.xmlsoap.org/ws/2005/02/sc">
+        <o:SecurityTokenReference>
+          <o:Reference URI="urn:uuid:940ecb87-bbfe-4453-adff-6df432ae9d5b" ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/sct" />
+        </o:SecurityTokenReference>
+        <c:Nonce>7HPLAyjlPxLbtPsGnn/E9A==</c:Nonce>
+      </c:DerivedKeyToken>
+      <e:ReferenceList xmlns:e="http://www.w3.org/2001/04/xmlenc#">
+        <e:DataReference URI="#_1" />
+        <e:DataReference URI="#_4" />
+      </e:ReferenceList>
+      <e:EncryptedData Id="_4" Type="http://www.w3.org/2001/04/xmlenc#Element" xmlns:e="http://www.w3.org/2001/04/xmlenc#">
+        <e:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+        <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+          <o:SecurityTokenReference>
+            <o:Reference ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/dk" URI="#uuid-dd2117e3-4969-4b7d-9945-b45c7de21306-8" />
+          </o:SecurityTokenReference>
+        </KeyInfo>
+        <e:CipherData>
+          <e:CipherValue>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</e:CipherValue>
+        </e:CipherData>
+      </e:EncryptedData>
+    </o:Security>
+  </s:Header>
+  <s:Body u:Id="_0">
+    <GetBulkAuxiliariesInfoResponse xmlns="http://tempuri.org/">
+      <GetBulkAuxiliariesInfoResult>{"ArtInfo":[{"PreArt":"EP22","DyeArt":"ED01","KeepTime":"60","LaterArt":"TA48","OWF":"2.68600","Remark":"染色加HAC 0.2G/L"} "ChemicalInfo":[{"Chemical_Name":"NA2SO4","Chemical_ID":"56","Stuff_Bat":"N/A","NewRecipe":"60.00000"}{"Chemical_Name":"NA2CO3","Chemical_ID":"54","Stuff_Bat":"N/A","NewRecipe":"20.00000"}{"Chemical_Name":"DM-2518","Chemical_ID":"921","Stuff_Bat":"N/A","NewRecipe":"1.00000"}{"Chemical_Name":"DM-1573A","Chemical_ID":"811","Stuff_Bat":"N/A","NewRecipe":"0.50000"}]}</GetBulkAuxiliariesInfoResult>
+    </GetBulkAuxiliariesInfoResponse>
+  </s:Body>
+</s:Envelope>

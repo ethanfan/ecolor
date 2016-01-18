@@ -1,0 +1,73 @@
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">http://tempuri.org/IColor/GetRecipetTraceInfo</a:Action>
+    <a:MessageID>urn:uuid:6e949ca4-7fb9-46a6-9699-c4f9055c9090</a:MessageID>
+    <a:ReplyTo>
+      <a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>
+    </a:ReplyTo>
+  </s:Header>
+  <s:Body>
+    <GetRecipetTraceInfo xmlns="http://tempuri.org/">
+      <Recipe_NO>R907130598</Recipe_NO>
+    </GetRecipetTraceInfo>
+  </s:Body>
+</s:Envelope>
+
+
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <s:Header>
+    <a:Action s:mustUnderstand="1" u:Id="_2">http://tempuri.org/IColor/GetRecipetTraceInfoResponse</a:Action>
+    <a:RelatesTo u:Id="_3">urn:uuid:a8efb4f7-71b6-4883-91f0-98490b299a17</a:RelatesTo>
+    <o:Security s:mustUnderstand="1" xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <u:Timestamp u:Id="uuid-dd2117e3-4969-4b7d-9945-b45c7de21306-23">
+        <u:Created>2012-11-16T05:47:02.831Z</u:Created>
+        <u:Expires>2012-11-16T05:52:02.831Z</u:Expires>
+      </u:Timestamp>
+      <c:DerivedKeyToken u:Id="uuid-dd2117e3-4969-4b7d-9945-b45c7de21306-7" xmlns:c="http://schemas.xmlsoap.org/ws/2005/02/sc">
+        <o:SecurityTokenReference>
+          <o:Reference URI="urn:uuid:940ecb87-bbfe-4453-adff-6df432ae9d5b" ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/sct" />
+        </o:SecurityTokenReference>
+        <c:Offset>0</c:Offset>
+        <c:Length>24</c:Length>
+        <c:Nonce>eKMSJGHggGqQnzJeshdSYA==</c:Nonce>
+      </c:DerivedKeyToken>
+      <c:DerivedKeyToken u:Id="uuid-dd2117e3-4969-4b7d-9945-b45c7de21306-8" xmlns:c="http://schemas.xmlsoap.org/ws/2005/02/sc">
+        <o:SecurityTokenReference>
+          <o:Reference URI="urn:uuid:940ecb87-bbfe-4453-adff-6df432ae9d5b" ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/sct" />
+        </o:SecurityTokenReference>
+        <c:Nonce>7HPLAyjlPxLbtPsGnn/E9A==</c:Nonce>
+      </c:DerivedKeyToken>
+      <e:ReferenceList xmlns:e="http://www.w3.org/2001/04/xmlenc#">
+        <e:DataReference URI="#_1" />
+        <e:DataReference URI="#_4" />
+      </e:ReferenceList>
+      <e:EncryptedData Id="_4" Type="http://www.w3.org/2001/04/xmlenc#Element" xmlns:e="http://www.w3.org/2001/04/xmlenc#">
+        <e:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+        <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+          <o:SecurityTokenReference>
+            <o:Reference ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/dk" URI="#uuid-dd2117e3-4969-4b7d-9945-b45c7de21306-8" />
+          </o:SecurityTokenReference>
+        </KeyInfo>
+        <e:CipherData>
+          <e:CipherValue>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</e:CipherValue>
+        </e:CipherData>
+      </e:EncryptedData>
+    </o:Security>
+  </s:Header>
+  <s:Body u:Id="_0">
+    <GetRecipetTraceInfoResponse xmlns="http://tempuri.org/">
+      <GetRecipetTraceInfoResult>{"RecipeTrace":[{"Recipe_NO":"R907130598","Batch_NO":"C9071792","Receive_Time":"","Final_LB_Delivery_Date":"","Color_Code":"40YW23388","Ratio":"10.00","Art_NO":"EP02-ED12-60-EA02","planyarn":"","PlanYarnLot":"","Yarn_Lot":"","Handle_Time":"2009-7-13 8:58:00","Worker_ID":"严慧霞","Suck_Plan_Date":"","Suck_Worker":"","Operate_Date":"","Operator":"","Dye_Time":"","Dye_Opertor":"","Add_alkali_Time":"","Add_Alkali_Opertor":"","Out_Time":"","Out_Opertor":"","Send_Sample_Time":"","Send_Sample_Opertor":"","Receive_Sample_Time":"","Receive_Toner":"","Recipe_Recorder":"Xiong, Yan Yun","Send_Toner":"-","Remark":"源配方:R907120574
+复板纱:
+纱重:5         
+来样单:
+打样机台: 
+配方类型:YD一次OK大货配方
+吸料机台:
+开单备注:/前处理复板
+吸料组号:          
+小样工艺:
+颜色评语:
+跟踪备注: ","Delat_Value":""}] "ChemicalInfo":[{"Chemical_Name":"SS YELLOW 3RF150%","Chemical_ID":"319","Unit_Usage":"0.3296","Unit":"%"}{"Chemical_Name":"SS BLUE BRF150%","Chemical_ID":"305","Unit_Usage":"0.0013","Unit":"%"}{"Chemical_Name":"EVE YELLOW 3GL","Chemical_ID":"198","Unit_Usage":"1.921","Unit":"%"}{"Chemical_Name":"2518固色剂","Chemical_ID":"921","Unit_Usage":"1","Unit":"%"}{"Chemical_Name":"DM-1573","Chemical_ID":"811","Unit_Usage":"0.5","Unit":"g/l"}{"Chemical_Name":"NA2SO4","Chemical_ID":"56","Unit_Usage":"60","Unit":"g/l"}{"Chemical_Name":"NA2CO3","Chemical_ID":"54","Unit_Usage":"20","Unit":"g/l"}]}</GetRecipetTraceInfoResult>
+    </GetRecipetTraceInfoResponse>
+  </s:Body>
+</s:Envelope>

@@ -1,0 +1,35 @@
+//
+// Prefix header for all source files of the 'YiDa' target in the 'YiDa' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#define CARelease(obj) {if(obj!=nil) {[obj release]; obj = nil; }}
+
+
+//D 对应的是clRed= TColor($0000FF);
+//S 对应的是clMaroon = TColor($000080);-
+//L 对应的是clFuchsia = TColor($FF00FF);
+#ifndef cklRed
+    #define cklRed  [UIColor colorWithRed:255/255.0 green:0 blue:0 alpha:1.0]
+#endif
+
+#ifndef cklMaroon 
+    #define cklMaroon  [UIColor colorWithRed:128/255.0 green:0 blue:0 alpha:1.0]
+#endif
+
+#ifndef cklFuchsia
+    #define cklFuchsia  [UIColor colorWithRed:255/255.0 green:0 blue:255/255.0 alpha:1.0]
+#endif
+
+
+

@@ -1,0 +1,61 @@
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">http://tempuri.org/IColor/GetBatchTraceInfo</a:Action>
+    <a:MessageID>urn:uuid:6e7ccc9a-bdfe-4f7b-aa97-daeaa0e8bc13</a:MessageID>
+    <a:ReplyTo>
+      <a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>
+    </a:ReplyTo>
+  </s:Header>
+  <s:Body>
+    <GetBatchTraceInfo xmlns="http://tempuri.org/">
+      <Batch_NO>Z2110533</Batch_NO>
+    </GetBatchTraceInfo>
+  </s:Body>
+</s:Envelope>
+
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <s:Header>
+    <a:Action s:mustUnderstand="1" u:Id="_2">http://tempuri.org/IColor/GetBatchTraceInfoResponse</a:Action>
+    <a:RelatesTo u:Id="_3">urn:uuid:2c80336d-6611-4013-9e1b-ccdc912d7ddb</a:RelatesTo>
+    <o:Security s:mustUnderstand="1" xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <u:Timestamp u:Id="uuid-dd2117e3-4969-4b7d-9945-b45c7de21306-35">
+        <u:Created>2012-11-16T05:53:06.014Z</u:Created>
+        <u:Expires>2012-11-16T05:58:06.014Z</u:Expires>
+      </u:Timestamp>
+      <c:DerivedKeyToken u:Id="uuid-dd2117e3-4969-4b7d-9945-b45c7de21306-7" xmlns:c="http://schemas.xmlsoap.org/ws/2005/02/sc">
+        <o:SecurityTokenReference>
+          <o:Reference URI="urn:uuid:940ecb87-bbfe-4453-adff-6df432ae9d5b" ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/sct" />
+        </o:SecurityTokenReference>
+        <c:Offset>0</c:Offset>
+        <c:Length>24</c:Length>
+        <c:Nonce>eKMSJGHggGqQnzJeshdSYA==</c:Nonce>
+      </c:DerivedKeyToken>
+      <c:DerivedKeyToken u:Id="uuid-dd2117e3-4969-4b7d-9945-b45c7de21306-8" xmlns:c="http://schemas.xmlsoap.org/ws/2005/02/sc">
+        <o:SecurityTokenReference>
+          <o:Reference URI="urn:uuid:940ecb87-bbfe-4453-adff-6df432ae9d5b" ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/sct" />
+        </o:SecurityTokenReference>
+        <c:Nonce>7HPLAyjlPxLbtPsGnn/E9A==</c:Nonce>
+      </c:DerivedKeyToken>
+      <e:ReferenceList xmlns:e="http://www.w3.org/2001/04/xmlenc#">
+        <e:DataReference URI="#_1" />
+        <e:DataReference URI="#_4" />
+      </e:ReferenceList>
+      <e:EncryptedData Id="_4" Type="http://www.w3.org/2001/04/xmlenc#Element" xmlns:e="http://www.w3.org/2001/04/xmlenc#">
+        <e:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+        <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+          <o:SecurityTokenReference>
+            <o:Reference ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/dk" URI="#uuid-dd2117e3-4969-4b7d-9945-b45c7de21306-8" />
+          </o:SecurityTokenReference>
+        </KeyInfo>
+        <e:CipherData>
+          <e:CipherValue>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</e:CipherValue>
+        </e:CipherData>
+      </e:EncryptedData>
+    </o:Security>
+  </s:Header>
+  <s:Body u:Id="_0">
+    <GetBatchTraceInfoResponse xmlns="http://tempuri.org/">
+      <GetBatchTraceInfoResult>{"BatchTraceInfo":[{"Batch_NO":"Z2110533","Layer":"0","Repair_Times":"0","Color_Code":"BLE0220","Yarn_Type":"CF","Yarn_Count":"50","Yarn_Lot":"T2CB-TF2070KO-W","Machine_Model":"T65","Machine_ID":"N605","Cage_Type":"1550MM-05","Dye_Type":"B","Cone_Unit_Weight":"","Trim_Beam_Unit_Weight":"45.74","Cone_Num":"","Weight":"320.18","Ratio":"11.79","Is_Fixed_Ratio":"False","Dye_Beam_Num":"7","Ends":"593","Trim_Length":"6640.00","Trim_Beam_Type":"0","Operate_Time":"2012-11-13 10:50:11","Need_Format":"True","Factory":"W302","Department":"Y2","Is_NY":"N","Raw_Yarn_Weight":"328.02","Put_Dye_Weight":"320.18","Inner_Repair_Times":"0","Send_Lab_Time":"2012-11-13 15:18:00","Lab_Dip_Type":"","Lab_Receive_Time":"2012-11-13 16:34:00","Recipe_OK_Time":"","Applied_Yarn":"True","Apply_Yarn_Class":"","Receive_Yarn_Time":"2012-11-15 10:32:00","Loose_Yarn_Time":"","Trim_Arranged":"True","Trim_Class":"早班","Trim_Arranged_Time":"2012-11-15 10:38:00","Trim_OK_Time":"","Print_Card_Time":"2012-11-15 10:52:00","Dye_Schedule_Time":"","Cage_Time":"","Dye_Time":"","Check_Time":"","Check_Result":"","Finish_Time":"","Dehydrate_Time":"","Dry_Time":"","Send_LT_Time":"","Send_QC_Time":"","QC_Receive_Time":"","QC_Time":"","QC_Result":"","QC_Suggestion":"","Winding_Time":"","Is_End":"False","Trace_Type":"正常","Delivery_Date":"2012-12-20 0:00:00","Is_White_Yarn":"False","Customer":"HUGO BOSS","Remark":"&#x1D;需查轴直接QA对色  低硬度33±3,，取样轴加50米，Y2复板，P2整经，Y2染色、P2浆纱 潮交联不能回修 防飞花！&gt;&gt;&#x1D;","Beam_Apply_Yarn_Plan":"2012-11-15 10:32:00","Advance_Handle_Time":"","End_Time":"","Discard":"N","Used_Time":"","First_Dye_Time":"","First_Finish_Time":"","Send_Rewinding_Time":"","Back_Production_Time":"","Inner_Yarn":"","Inner_Yarn_Time":"","Outer_Yarn":"","Outer_Yarn_Time":"","Color_Yarn":"","Color_Yarn_Time":"","Final_LB_Delivery_Date":"2012-11-16 0:00:00","Batch_Delivery_Date":"2012-11-20 0:00:00","Recive_LT_Time":""}]"BatchDetail":[{"Batch_Dtl_ID":"2030344","Batch_NO":"Z2110533","Job_NO":"PT12B240","GF_ID":"331412","Yarn_Job_ID":"1742396","Warp_Weft":"J","Remark":"","Weight":"320.18","PPO_Type":"BU","PD_Machine_Type":"6","Stock_ID":"900774","Raw_Yarn_Weight":"328.02","Product_Weight":"320.18"}]}</GetBatchTraceInfoResult>
+    </GetBatchTraceInfoResponse>
+  </s:Body>
+</s:Envelope>

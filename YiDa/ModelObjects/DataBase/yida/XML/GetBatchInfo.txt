@@ -1,0 +1,62 @@
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">http://tempuri.org/IColor/GetBatchInfo</a:Action>
+    <a:MessageID>urn:uuid:6d686032-fd44-4a62-a0f3-9668cf53cf2b</a:MessageID>
+    <a:ReplyTo>
+      <a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>
+    </a:ReplyTo>
+  </s:Header>
+  <s:Body>
+    <GetBatchInfo xmlns="http://tempuri.org/">
+      <Batch_NO>C2106116</Batch_NO>
+    </GetBatchInfo>
+  </s:Body>
+</s:Envelope>
+
+
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <s:Header>
+    <a:Action s:mustUnderstand="1" u:Id="_2">http://tempuri.org/IColor/GetBatchInfoResponse</a:Action>
+    <a:RelatesTo u:Id="_3">urn:uuid:feb89ec7-f049-4fb7-8be0-e3f943c4dfa3</a:RelatesTo>
+    <o:Security s:mustUnderstand="1" xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <u:Timestamp u:Id="uuid-67c48f3b-6b59-4a82-bb80-e76fa63fd1d7-33">
+        <u:Created>2012-11-16T07:17:39.459Z</u:Created>
+        <u:Expires>2012-11-16T07:22:39.459Z</u:Expires>
+      </u:Timestamp>
+      <c:DerivedKeyToken u:Id="uuid-67c48f3b-6b59-4a82-bb80-e76fa63fd1d7-29" xmlns:c="http://schemas.xmlsoap.org/ws/2005/02/sc">
+        <o:SecurityTokenReference>
+          <o:Reference URI="urn:uuid:dd2dfeaf-4cbc-47c9-990d-8c5e397419f2" ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/sct" />
+        </o:SecurityTokenReference>
+        <c:Offset>0</c:Offset>
+        <c:Length>24</c:Length>
+        <c:Nonce>TjpooyZtA7aXIXXaLJf9mg==</c:Nonce>
+      </c:DerivedKeyToken>
+      <c:DerivedKeyToken u:Id="uuid-67c48f3b-6b59-4a82-bb80-e76fa63fd1d7-30" xmlns:c="http://schemas.xmlsoap.org/ws/2005/02/sc">
+        <o:SecurityTokenReference>
+          <o:Reference URI="urn:uuid:dd2dfeaf-4cbc-47c9-990d-8c5e397419f2" ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/sct" />
+        </o:SecurityTokenReference>
+        <c:Nonce>TZwAkb/UXUKyy9vlBdn1zA==</c:Nonce>
+      </c:DerivedKeyToken>
+      <e:ReferenceList xmlns:e="http://www.w3.org/2001/04/xmlenc#">
+        <e:DataReference URI="#_1" />
+        <e:DataReference URI="#_4" />
+      </e:ReferenceList>
+      <e:EncryptedData Id="_4" Type="http://www.w3.org/2001/04/xmlenc#Element" xmlns:e="http://www.w3.org/2001/04/xmlenc#">
+        <e:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+        <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+          <o:SecurityTokenReference>
+            <o:Reference ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/dk" URI="#uuid-67c48f3b-6b59-4a82-bb80-e76fa63fd1d7-30" />
+          </o:SecurityTokenReference>
+        </KeyInfo>
+        <e:CipherData>
+          <e:CipherValue>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</e:CipherValue>
+        </e:CipherData>
+      </e:EncryptedData>
+    </o:Security>
+  </s:Header>
+  <s:Body u:Id="_0">
+    <GetBatchInfoResponse xmlns="http://tempuri.org/">
+      <GetBatchInfoResult>{"BatchInfo":[{"GF_NO":"OC80A80A-1G8026DK,OC80A80A-1G8027DK,PC5080A-1G7943DK","Color_Code":"WH001","Yarn_Type":"CF","Yarn_Count":"80/2","Yarn_Lot":"T2CA-STF2064GA","WWeight":"383.69","FWeight":"0.00","RGB":"16777215","Machine_Model":"T47","Na2Co3":"0.01","Ns2So4":"0.002","Ratio":"5.66","FinishMethod":"","Customer":"MAILYARD","Delivery_Date":"2012-11-25 0:00:00","Batch_Delivery_Date":"2012-10-31 0:00:00","Remark":"一次性筒管直接QA对色  普通!，Y2松纱，Y2染色 防飞花！ 特白主缸号：C2106116,(T2103290,T2103491,T2103187,)","Hints":""}]}</GetBatchInfoResult>
+    </GetBatchInfoResponse>
+  </s:Body>
+</s:Envelope>

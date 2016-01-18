@@ -1,0 +1,223 @@
+
+    DataMember *dataMemberHandle=[DataMember shareInstance];
+    
+    //**
+    //@返回值说明：类型:nsstring  类似值:LABDIP
+    //@解析模型：一
+    //@param:姓名，密码；
+    //**
+    //[dataMemberHandle LoginIn:@"sunyan" password:@"1"];
+    
+    //**
+    //@返回值说明，类型:nsstring  类似值:OK 
+    //@解析模型：一
+    //**
+    //[dataMemberHandle LoginOut:@"OK"];
+    
+    
+    
+    //**
+    //@返回值说明，类型:nsarry  类似值:{"Item_NO":"一步法"} {"Item_NO":"二步法"} 类似使用方法:[ary objectAtIndex:0] objectForKey:@"Item_NO"];
+    //@statue: error ,后台返回数据不标准，缺少分号。
+    //@解析模型:二
+    //@key:Item_NO
+    //ary element:dic;key : Item_NO , value : 一步法
+    //**
+    //[dataMemberHandle GetStepList];
+    
+  
+    //**
+    //@返回值说明，类型:nsarry  类似值:{"Item_NO":"活性"},{"Item_NO":"分散"} 类似使用方法:[ary objectAtIndex:0] objectForKey:@"Item_NO"];
+    //@statue: error ,后台返回数据不标准，缺少分号。
+    //@解析模型:二
+    //@key:Item_NO
+    //ary element:dic
+    //**
+    //[dataMemberHandle GetTypeList];
+    
+    
+    
+    //@解析模型:二
+    //@key:Item_NO
+    //ary element:dic
+    //[dataMemberHandle GetSimpleColorList];
+    //@解析模型:二
+    //@key:Item_NO
+    //ary element:dic
+     //[dataMemberHandle GetColorDeepList];
+    //@解析模型:二
+    //@key:Item_NO
+    //ary element:dic
+    //[dataMemberHandle GetCostList];
+    
+    //@解析模型:二
+    //@key:Item_NO    
+    //ary element:dic
+    //[dataMemberHandle GetKDNOList:@"LB2012-2809"];
+    
+    
+    
+    //@解析模型:二
+    //@key:Item_NO      
+    //ary element:dic
+    //[dataMemberHandle GetColorCodeList:@"LB2012-2809" KD_NO:@"KD2012-23684"];
+
+    
+    
+    
+    
+   /////////////////////////////////////////////////////////////////////////// 
+    
+    
+    
+    
+    //@解析模型:二
+    //ary element:LBInfoData
+    //[dataMemberHandle GetLBInfo:@"LB2012-2809" Color_Code:@"50RDE0081"];
+   
+    
+    
+    //@解析模型:二
+    //@返回类型：BestGroupInfo BestGroupInfo.h ； getOneGroup： 获取多少个方块，返回值：是一个数组，（这个数组保存了 0－n个元素的一个数组，就说一个方块下面的多少个属性的数组。）
+    //[dataMemberHandle GetBestGroupInfo:@"活性" Simple_Color:@"RD" Color_Deep:@"DD" Customer:@"TMME" FinishList:@"2+"];
+    //使用方法：
+   /* NSArray *ddd= [ttt getOneGroup];
+    NSLog(@"ddd-- %d",ddd.count);
+    NSArray *rrr=[ddd objectAtIndex:0];
+    BGI_Atr_BestGroupInfo *ssdsd=[rrr objectAtIndex:0];
+    BGI_Atr_BestGroupInfo *ssdsd1=[rrr objectAtIndex:1];
+    BGI_Atr_BestGroupInfo *ssdsd2=[rrr objectAtIndex:2];
+
+    NSLog(@"ddd22 %d    %@   clolor:%@   %@  %@",ddd.count,rrr,ssdsd.Chemical_Name,ssdsd1.Chemical_Name,ssdsd2.Chemical_Name);*/
+    
+    
+    
+    
+    //{"Save":"OK"},解析模型一
+    //[dataMemberHandle  SaveRecipeInfo:@"LB2012-2809" Color_Code:@"50RDE0081" Weight:@"25"  User_ID:@"Jiajm" Step:@"一步法" Group_ID:@"71" ChemicalIDStr:@"305,307,319," UsageStr:@"0.1,0.3,0.2"]; 
+    
+    
+    
+    
+    //解析模型二
+    //@返回值：类型 ChemicalInfo，具体数据查看 （ChemicalInfo.h）
+   //[dataMemberHandle GetChemicalInfo:@"VL40289" Type:@"1"];
+   
+    
+
+    
+    
+    
+    
+    
+    //解析模型 二
+    //@返回值：类型 LabAuxiliariesInfo，具体数据查看 （LabAuxiliariesInfo.h）
+    //[dataMemberHandle GetLabAuxiliariesInfo:@"305,307,319," UsageStr:@"0.1,0.3,0.2"];
+    
+    
+
+    
+    
+    
+    
+    //解析模型一  {"Save":"OK"}
+    //[dataMemberHandle SaveLabRecipeInfo:@"LB2012-2809" Color_Code:@"50RDE0081" Weight:@"25" User_ID:@"Jiajm" Recipe_NO:@"0" NA2CO3:@"0.2" NA2SO4:@"0.04" Keep_Temperature_Time:@"60" Group_ID:@"71" ChemicalIDStr:@"305,307,319," UsageStr:@"0.1,0.3,0.2" OldUsageStr:@"0.1,0.33,0.3"];
+   
+    
+    
+    
+    //解析模型一  {"Save":"OK"}
+    //[dataMemberHandle  CheckLabRecipeInfo:@"R210264370,R210264366,R210262096" GradeStr:@"A,B,C" User_ID:@"jiajm"];
+    
+    
+    
+    
+    
+    
+    
+    
+    // 解析模型二
+    //@返回值类型：Nsary
+    //@key :Item_NO
+    //[dataMemberHandle GetRecipeNOList:@"C2106723"]; 
+   
+    
+    
+    
+    //解析模型 二
+    //@返回值类型：RecipetTraceInfo 详细数据查看（RecipetTraceInfo.h）
+    //@key;查看RecipetTraceInfo.h
+   //RecipetTraceInfo *mydd= [dataMemberHandle GetRecipetTraceInfo:@"R907130598"];
+    
+    /*RTI_atb_RecipeTrace *ttt=[mydd.RecipeTraceAry objectAtIndex:0];
+    NSLog(@"ChemicalInfoAry--- %@  %@  %@",ttt.Batch_NO,ttt.Art_NO,ttt.Color_Code);*/
+
+    
+   /*RTI_atb_ChemicalInfo *ttt=[mydd.ChemicalInfoAry objectAtIndex:0];
+    
+    NSLog(@"ChemicalInfoAry--- %@  %@  %@",ttt.Chemical_ID,ttt.Chemical_Name,ttt.Unit_Usage);*/
+   
+    
+    
+    
+    
+    
+    //解析模型二
+    //@返回值类型：nsarry
+    //[dataMemberHandle GetBatchInfo:@"C2106116"];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //解析模型 二
+    //返回值类型：BulkAuxiliariesInfo （BulkAuxiliariesInfo.h）
+    //[dataMemberHandle  GetBulkAuxiliariesInfostring:@"加成" Batch_NO:@"C203717" FirstDyeCotton:@"0" ChemicalIDStr:@"56,54,921" UsageStr:@"60.00000,20.00000,1.00000"];
+    
+    
+    
+    
+    
+    //解析模型一  {"Save":"OK"}
+    //[dataMemberHandle SaveBulkRecipeInfo:@"0" xriteNO:@"Z9120553-2" FirstDyeCotton:@"0" Batch_NO:@"C2106116" User_ID:@"Jiajm" Recipe_NO:@"0" NA2CO3:@"0.2" NA2SO4:@"0.35" Keep_Temperature_Time:@"60" Group_ID:@"71" ChemicalIDStr:@"305,307,319" UsageStr:@"0.1,0.3,0.2" OldUsageStr:@"0.1,0.33,0.3"];
+   
+    
+    
+    
+    
+    
+    //解析模型一  {"Save":"OK"}
+    //[dataMemberHandle CheckBulkRecipeInfo:@"R210264370,R21026436," GradeStr:@"A,B," User_ID:@"iajm"];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //解析模型  二
+    //返回类型：ary 数组元素：BatchTraceInfo.h
+    //[dataMemberHandle  GetBatchTraceInfo:@"Z2110533"];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //解析模型  二
+    //返回类型：ary 数组元素：TotalProgressInfo.h
+    //[dataMemberHandle GetTotalProgressInfo:@"Z2110533"];
+    

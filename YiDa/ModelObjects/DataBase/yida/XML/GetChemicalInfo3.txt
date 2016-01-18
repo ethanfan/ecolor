@@ -1,0 +1,62 @@
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">http://tempuri.org/IColor/GetChemicalInfo</a:Action>
+    <a:MessageID>urn:uuid:59f5d66b-5cfe-4d78-ad2b-4a9060278a4c</a:MessageID>
+    <a:ReplyTo>
+      <a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>
+    </a:ReplyTo>
+  </s:Header>
+  <s:Body>
+    <GetChemicalInfo xmlns="http://tempuri.org/">
+      <BatchNO_OR_ColorCode>C2106723</BatchNO_OR_ColorCode>
+      <Type>3</Type>
+    </GetChemicalInfo>
+  </s:Body>
+</s:Envelope>
+
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <s:Header>
+    <a:Action s:mustUnderstand="1" u:Id="_2">http://tempuri.org/IColor/GetChemicalInfoResponse</a:Action>
+    <a:RelatesTo u:Id="_3">urn:uuid:866e0975-6316-438b-b0ac-023edc9428c3</a:RelatesTo>
+    <o:Security s:mustUnderstand="1" xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <u:Timestamp u:Id="uuid-3f3861c2-3499-4ff3-b196-e97dcb8dd760-86">
+        <u:Created>2012-11-16T05:31:15.062Z</u:Created>
+        <u:Expires>2012-11-16T05:36:15.062Z</u:Expires>
+      </u:Timestamp>
+      <c:DerivedKeyToken u:Id="uuid-3f3861c2-3499-4ff3-b196-e97dcb8dd760-70" xmlns:c="http://schemas.xmlsoap.org/ws/2005/02/sc">
+        <o:SecurityTokenReference>
+          <o:Reference URI="urn:uuid:eb7f3ac5-5123-45eb-9365-f4361f1704df" ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/sct" />
+        </o:SecurityTokenReference>
+        <c:Offset>0</c:Offset>
+        <c:Length>24</c:Length>
+        <c:Nonce>3B7uYNNn8PcUpvz9S64iVQ==</c:Nonce>
+      </c:DerivedKeyToken>
+      <c:DerivedKeyToken u:Id="uuid-3f3861c2-3499-4ff3-b196-e97dcb8dd760-71" xmlns:c="http://schemas.xmlsoap.org/ws/2005/02/sc">
+        <o:SecurityTokenReference>
+          <o:Reference URI="urn:uuid:eb7f3ac5-5123-45eb-9365-f4361f1704df" ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/sct" />
+        </o:SecurityTokenReference>
+        <c:Nonce>s9pHUW4WFXv68nF8yPVzeg==</c:Nonce>
+      </c:DerivedKeyToken>
+      <e:ReferenceList xmlns:e="http://www.w3.org/2001/04/xmlenc#">
+        <e:DataReference URI="#_1" />
+        <e:DataReference URI="#_4" />
+      </e:ReferenceList>
+      <e:EncryptedData Id="_4" Type="http://www.w3.org/2001/04/xmlenc#Element" xmlns:e="http://www.w3.org/2001/04/xmlenc#">
+        <e:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+        <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+          <o:SecurityTokenReference>
+            <o:Reference ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/dk" URI="#uuid-3f3861c2-3499-4ff3-b196-e97dcb8dd760-71" />
+          </o:SecurityTokenReference>
+        </KeyInfo>
+        <e:CipherData>
+          <e:CipherValue>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</e:CipherValue>
+        </e:CipherData>
+      </e:EncryptedData>
+    </o:Security>
+  </s:Header>
+  <s:Body u:Id="_0">
+    <GetChemicalInfoResponse xmlns="http://tempuri.org/">
+      <GetChemicalInfoResult>{"GroupInfo":[{"GroupID":"2460"}] "ChemicalInfo":[{"Chemical_Name":"S HF Yellow 3R","Chemical_ID":"686","Stuff_Bat":"N/A","R210291594":"0.0014","R210282596":"0.0014","R210281669":"0.00135","R210281666":"0.0013","R210233565":"0.0013","R210223356":"0.0016"}{"Chemical_Name":"S HF RED 2B","Chemical_ID":"680","Stuff_Bat":"N/A","R210291594":"0.00276","R210282596":"0.0029","R210281669":"0.0031","R210281666":"0.003","R210233565":"0.0029","R210223356":"0.0008"}{"Chemical_Name":"S HF BLUE 2R","Chemical_ID":"295","Stuff_Bat":"","R210291594":"0.385","R210282596":"0.32","R210281669":"0.33","R210281666":"0.31","R210233565":"0.2955","R210223356":"0.321"}]}</GetChemicalInfoResult>
+    </GetChemicalInfoResponse>
+  </s:Body>
+</s:Envelope>

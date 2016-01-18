@@ -1,0 +1,59 @@
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">http://tempuri.org/IColor/GetTypeList</a:Action>
+    <a:MessageID>urn:uuid:9ba056ed-4613-4c3b-bbb0-87864adbf011</a:MessageID>
+    <a:ReplyTo>
+      <a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>
+    </a:ReplyTo>
+  </s:Header>
+  <s:Body>
+    <GetTypeList xmlns="http://tempuri.org/" />
+  </s:Body>
+</s:Envelope>
+
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <s:Header>
+    <a:Action s:mustUnderstand="1" u:Id="_2">http://tempuri.org/IColor/GetTypeListResponse</a:Action>
+    <a:RelatesTo u:Id="_3">urn:uuid:1c5730d4-83ec-48d2-a081-95335ad14029</a:RelatesTo>
+    <o:Security s:mustUnderstand="1" xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <u:Timestamp u:Id="uuid-3f3861c2-3499-4ff3-b196-e97dcb8dd760-20">
+        <u:Created>2012-11-16T05:07:57.497Z</u:Created>
+        <u:Expires>2012-11-16T05:12:57.497Z</u:Expires>
+      </u:Timestamp>
+      <c:DerivedKeyToken u:Id="uuid-3f3861c2-3499-4ff3-b196-e97dcb8dd760-7" xmlns:c="http://schemas.xmlsoap.org/ws/2005/02/sc">
+        <o:SecurityTokenReference>
+          <o:Reference URI="urn:uuid:19223a12-29b0-42d9-8358-ac71ae9f7cb9" ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/sct" />
+        </o:SecurityTokenReference>
+        <c:Offset>0</c:Offset>
+        <c:Length>24</c:Length>
+        <c:Nonce>WEpt9kfWEjsdQ6MRwwRVQg==</c:Nonce>
+      </c:DerivedKeyToken>
+      <c:DerivedKeyToken u:Id="uuid-3f3861c2-3499-4ff3-b196-e97dcb8dd760-8" xmlns:c="http://schemas.xmlsoap.org/ws/2005/02/sc">
+        <o:SecurityTokenReference>
+          <o:Reference URI="urn:uuid:19223a12-29b0-42d9-8358-ac71ae9f7cb9" ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/sct" />
+        </o:SecurityTokenReference>
+        <c:Nonce>RkxOWJhYUT7inBvbSwvHRg==</c:Nonce>
+      </c:DerivedKeyToken>
+      <e:ReferenceList xmlns:e="http://www.w3.org/2001/04/xmlenc#">
+        <e:DataReference URI="#_1" />
+        <e:DataReference URI="#_4" />
+      </e:ReferenceList>
+      <e:EncryptedData Id="_4" Type="http://www.w3.org/2001/04/xmlenc#Element" xmlns:e="http://www.w3.org/2001/04/xmlenc#">
+        <e:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+        <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+          <o:SecurityTokenReference>
+            <o:Reference ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/dk" URI="#uuid-3f3861c2-3499-4ff3-b196-e97dcb8dd760-8" />
+          </o:SecurityTokenReference>
+        </KeyInfo>
+        <e:CipherData>
+          <e:CipherValue>ugbsC0ZZjXRhTpxzIe9/Q05jewM5Zvj3lmRl+LvWY+TWbPfSXwQGHb7ugQ+yssRpjWY3/nJgkJto7ZdiDrDIXgdaO1JfW5H+XoFVfvAPdLJywsttT2DXbX4jP0gD1qDY8bfNQW+7PIoUB0UGSRMbF88pqc5Oik15dlPvlTpwTDrtbO7fl+GlOgRZDCW0lJFducxEPfJL1AjjWWBbK+Pxp4FZPQYyA57tQw12MmrYYe6CnNvUcs2kg6nygaUszl8u0Y1BRNlt7pYHWFb25l+Nb9Kflj7ARsd5gspwlABW0AoYysLhTxioS+wkKz0srXNdDik/Jqc1AxVtEK0tzQmuhbUc5GPVjuYHNqR3rWsYR3uqHjYM94g8uKqLTdE4rLX3O4FAtdcbwLZWBz/GQ2koVqDCmYetqIqzyGQ0cAKs6JkFJPdBzKoNl60DUi43g/DxslsVlZYud8zDL/JRBMeMULzXm3VQD7de7SqlslQENO3EWrzgtQ8hc7ejKsLGwQB1PFIc0HhLzu9A1uMv5ivx5U+U3qs2QWqh06vhfvRp8BvZ0g16G3xFas8KQgTw5j4osFjJQ1yDT8ZAVXTzgeIiLn1cngE/6JsrKymfSyYnlZok5S23QzD2eleeQkLFSvXGJ83G0OD27VwRKgFkmVAkR26vRbcEbdKmIzJRXKXZcAtfJzDam1zFzdjc20PtycOWIOKbbMtavI/9u9UKnR7PruPWiV9nMCWGbNKjFILuNMijA5dxvhmJ5sb59WdkiqIFB0tBoYxl9XCgWRPWC2TrDZIPrCdPl3sZmpyOVQTkSlMLrc7jWCG5qTxC+sqNVXILRScjdCu8obLEqbU1zMt5SKT9xnWWv10ZfQiXPxGTytMfMFjBROz4mYOHcEAYU05D9EqYjIz5keI1BnudHxBILipMs1G8AMbq4nMPfQ0r6qbBpieVUdXsNhWMlOT+N8fQXKF19poJXKqa5cQoDnhn54VOLzQcKRgyMqpsH6Ht+0c83BYb6lNjf4q8QEMdf5+SfpvHfphZRn131bd3IxTC+Wo5QUyqK9HyR4Cp0TsCtsJUvZpck39oxPXGUH3MXcyP5nA5DowPMcxcmd9t/Zw+P6isPBVRApbpP+BrP4z8bwImy+xkdYlQI7ae0dwiQSU7f/GqgzbE8THplvfAfMScx3fY+ecf5PHyy8RYx9vQueUQhrMf4pDr6aPqBi83KDvT/hbLB+0S94I35cg+MkREQqXZA7kGf9XZ70iVjHctTIIQHbumODB0ZszNGWQiPv36HSyk1DJWvuqxXt8asUm8wWhnqbUbxQkX9gtfokXp5QSx+MXNN28E+q3fcU+w7ZcN5i2zGZUKsLjucx+u6nJXS9bKeCrYLlW53VRTf/wsQAb92gmSfliXKOdyv/NHp9fm3VqmwbW+X0jD8jmeCRhgcFCWXr1WsEZ8CPc+dv1q+MflzWnL8uSwv2H4pn6RSYKck6aDBb7M5XX/E4e6oHFOtXwRa8b3L3WwqfTDPM1XEyLN9iEyrnz8FMgGh9R313lnSlyKm0UxFvf9tevfKNaOqTmLQkxAF3jdCpUP7lt7C3wwtZ4hSk3eXVMmpPc1dlh8iTZgGlQZk3mH73w+5Lz0xvxacewCKdtpwD4VJ+WC6UCstp0BjWsEMA/ZTlt0IuKyyqi3szQN56cxk1Uz+dkikT4zDbmEizOxotVXxjJRC1pBZ9D/GXGQ8xBYvmNJ697AQlG14NybflOk1QGFbdwZ1jOBNUrDS5p0ebA5YKyDZvNwTYP87QGEkMm0DjLCrQ9baPDWw1dQFLw6iqPKM6AOfNeiVioT1OcUlf4B0fZrZtYCLf/gvorX0Jrbxuzs6wFZEtzp5y5A7l4F3MILwKD0lQfjH4t7IskX/RLr5N3VDoo7Hnxyq6LBPzjNk0KOf9TiehwKd1Vss+qPCftdDLanlkaXAG48H+rJlA5CqRmbsyovWvv5h3H/KOif7fuotr4D8d9xYKrMsjnjqn0w1AnxFXGm91w1vI+xgqqU+SgiHCYPHBtb6QwVWAde7UK01oi5gwXowAlF77ehORDdBeKZGtI9GVrlyTF2UM6czgYObZHKDGT1wyonVggmKqL0geI7eMcqfQjOEpamuvJ0QlOjAxlG7+Nsz/RKOt2xIAxx4qa99eXnqQRHI0qyi71qObJD</e:CipherValue>
+        </e:CipherData>
+      </e:EncryptedData>
+    </o:Security>
+  </s:Header>
+  <s:Body u:Id="_0">
+    <GetTypeListResponse xmlns="http://tempuri.org/">
+      <GetTypeListResult>{"Type":[{"Item_NO":"活性"} {"Item_NO":"分散"}{"Item_NO":"硫化"} {"Item_NO":"还原"}]}</GetTypeListResult>
+    </GetTypeListResponse>
+  </s:Body>
+</s:Envelope>
