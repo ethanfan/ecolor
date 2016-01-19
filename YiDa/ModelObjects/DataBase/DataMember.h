@@ -277,6 +277,14 @@ return __singleton__; \
                                        ChemicalIDStr:(NSString *)ChemicalIDStr
                                             UsageStr:(NSString *)UsageStr;
 
+#pragma mark---
+#pragma mark SaveLog 保存日志信息
+#pragma mark--
+//requestMethod->要调用的接口名，requestTime->请求时间，responseTime->响应时间，runTime->逻辑处理时间
+-(void)SaveLog:(NSString *)requestMethod
+   requestTime:(NSDate *)requestTime
+  responseTime:(NSDate *)responseTime
+       runTime:(NSDate *)runTime;
 
 //保存Bulk调方配方信息
 //string SaveBulkRecipeInfo(int Repair,string xriteNO,int FirstDyeCotton,string Batch_NO, string User_ID, string Recipe_NO, double NA2CO3, double NA2SO4, int Keep_Temperature_Time, string Group_ID, string ChemicalIDStr, string UsageStr, string OldUsageStr)

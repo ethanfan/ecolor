@@ -296,11 +296,13 @@
         {
             BatchInfo *batch = (BatchInfo *)[resultsList objectAtIndex:0];
             [self reloadDatasWith:batch];
+            
         }
     }];
 }
 - (void)queryWith:(NSString *)_batch result:(void (^)(NSArray *list))block
 {
+    NSDate * requestTime = [NSDate date];
     DataMember  *networkDataMemberHandle = [DataMember shareInstance];
     UIActivityIndicatorView *loadingView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [loadingView startAnimating];
@@ -311,8 +313,19 @@
     dispatch_async(bulkPalettesQueue,^{
         NSArray *lists = [networkDataMemberHandle GetBatchInfo:_batch];
         dispatch_async(dispatch_get_main_queue(), ^{
+            NSDate * responseTime = [NSDate date];
             [loadingView removeFromSuperview];
             block(lists);
+            NSDate * runTime = [NSDate date];
+            DataMember  *networkDataMemberHandle = [DataMember shareInstance];
+            dispatch_queue_t saveLogqueue = dispatch_queue_create("YDSaveLogGetBatchInfoQueue", NULL);
+            dispatch_async(saveLogqueue, ^(void){
+                [networkDataMemberHandle SaveLog:@"GetBatchInfo"
+                                     requestTime:requestTime
+                                    responseTime:responseTime
+                                         runTime:runTime];
+            });
+
         });
         
     });

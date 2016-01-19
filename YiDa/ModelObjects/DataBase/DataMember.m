@@ -1342,6 +1342,36 @@
     
 }
 
+#pragma mark---
+#pragma mark SaveLog 保存日志信息
+#pragma mark--
+//requestMethod->要调用的接口名，requestTime->请求时间，responseTime->响应时间，runTime->逻辑处理时间
+-(void)SaveLog:(NSString *)requestMethod
+                requestTime:(NSDate *)requestTime
+                responseTime:(NSDate *)responseTime
+                runTime:(NSDate *)runTime
+{
+    
+    NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss.SSS"];
+    NSString *requestTimestr=[dateFormatter stringFromDate:requestTime];
+    NSLog(@"请求服务名：%@,请求时间：%@,网络响应耗时：%f ms,Ipad逻辑处理耗时：%f ms",
+          requestMethod,
+          requestTimestr,
+          [responseTime timeIntervalSince1970]*1000-[requestTime timeIntervalSince1970]*1000,
+          [runTime timeIntervalSince1970]*1000-[responseTime timeIntervalSince1970]*1000
+          );
+
+    NSString *logInfo=[NSString stringWithFormat:@"%@,%@,%f,%f",
+                       requestMethod,
+                       requestTime,
+                       [responseTime timeIntervalSince1970]*1000-[requestTime timeIntervalSince1970]*1000,
+                       [runTime timeIntervalSince1970]*1000-[responseTime timeIntervalSince1970]*1000
+                       ];
+    NSString *bodyMessage=[NSString stringWithFormat:
+                           @"<s:Envelope xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:a=\"http://www.w3.org/2005/08/addressing\"><s:Header><a:Action s:mustUnderstand=\"1\">http://tempuri.org/IColor/SaveLog</a:Action><a:MessageID>urn:uuid:4b7fd183-850f-4c80-8f38-232875652101</a:MessageID><a:ReplyTo><a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address></a:ReplyTo><a:To s:mustUnderstand=\"1\">http://www.esquel.cn/wmis/WcfColor/Color.svc</a:To></s:Header><s:Body><SaveLog xmlns=\"http://tempuri.org/\"><logInfo>%@</logInfo></SaveLog></s:Body></s:Envelope>",logInfo];
+    NSString *webString=[self NetInterface:bodyMessage];
+}
 
 #pragma mark-
 #pragma mark  BULK 保存Bulk调方配方信息
