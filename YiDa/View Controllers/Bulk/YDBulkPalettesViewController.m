@@ -681,7 +681,6 @@ Keep_Temperature_Time:(NSString *)Keep_Temperature_Time
          OldUsageStr:(NSString *)OldUsageStr
                block:(void (^)(NSString *))block
 {
-    NSDate * requestTime = [NSDate date];
     UIActivityIndicatorView *loadingView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [loadingView startAnimating];
     loadingView.center = CGPointMake(512, 354);
@@ -704,7 +703,6 @@ Keep_Temperature_Time:(NSString *)Keep_Temperature_Time
                                                               UsageStr:UsageStr
                                                            OldUsageStr:OldUsageStr];
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSDate * responseTime = [NSDate date];
             [loadingView removeFromSuperview];
             //            NSLog(@"获取调方信息信息   。。。。。%@",resutl);
             //            NSLog(@"lab获取调方信息信息   。。。。GroupInfoAry.count。 %d  ChemicalInfoAry.count .%d",resutl.GroupInfoAry.count,resutl.ChemicalInfoAry.count);
@@ -715,15 +713,6 @@ Keep_Temperature_Time:(NSString *)Keep_Temperature_Time
                 
                 block(result);
             }
-            NSDate * runTime = [NSDate date];
-            DataMember  *networkDataMemberHandle = [DataMember shareInstance];
-            dispatch_queue_t saveLogqueue = dispatch_queue_create("YDSaveLogSaveBulkRecipeInfoQueue", NULL);
-            dispatch_async(saveLogqueue, ^(void){
-                [networkDataMemberHandle SaveLog:@"SaveBulkRecipeInfo"
-                                     requestTime:requestTime
-                                    responseTime:responseTime
-                                         runTime:runTime];
-            });
         });
         
     });
@@ -1101,7 +1090,7 @@ Keep_Temperature_Time:(NSString *)Keep_Temperature_Time
             oldUsage = recipe.oldAndNewUsages;
             newUsage = [recipe getOldUsages];
         }
- 
+        NSDate * requestTime = [NSDate date];
         UIActivityIndicatorView *loadingView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         [loadingView startAnimating];
         loadingView.center = CGPointMake(512, 354);
@@ -1123,8 +1112,18 @@ Keep_Temperature_Time:(NSString *)Keep_Temperature_Time
                                                                   UsageStr:newUsage
                                                                OldUsageStr:oldUsage];
             dispatch_async(dispatch_get_main_queue(), ^{
+                NSDate * responseTime = [NSDate date];
                 [loadingView removeFromSuperview];
                 [self outputResult:result objectIndex:i];
+                NSDate * runTime = [NSDate date];
+                DataMember  *networkDataMemberHandle = [DataMember shareInstance];
+                dispatch_queue_t saveLogqueue = dispatch_queue_create("YDSaveLogSaveBulkRecipeInfoQueue", NULL);
+                dispatch_async(saveLogqueue, ^(void){
+                    [networkDataMemberHandle SaveLog:@"SaveBulkRecipeInfo"
+                                         requestTime:requestTime
+                                        responseTime:responseTime
+                                             runTime:runTime];
+                });
             });
             
         });

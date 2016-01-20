@@ -353,14 +353,15 @@
     if (bodyMessage!=nil&&[bodyMessage length]!=0) {
         
         
-        NSString *urlString = [NSString stringWithFormat:IPAd];
-        
+//        NSString *urlString = [NSString stringWithFormat:IPAd];
+        NSString *urlString =@"http://192.168.27.80/wcfcolor/color.svc";
         NSURL *url = [NSURL URLWithString:urlString];
         ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
         
         [request addRequestHeader:@"Content-Type" value: @"application/soap+xml; charset=utf-8"];
         
-        NSString *dataContent = bodyMessage;
+//        NSString *dataContent = bodyMessage;
+        NSString *dataContent = [bodyMessage stringByReplacingOccurrencesOfString:@"http://www.esquel.cn/wmis/WcfColor/Color.svc" withString:@"http://192.168.27.80/wcfcolor/color.svc"];
         [request appendPostData:[dataContent dataUsingEncoding:NSUTF8StringEncoding]];
         [request startSynchronous];
         NSError *error = [request error];
